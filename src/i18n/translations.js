@@ -13,11 +13,12 @@ export const translations = {
       badge: "Développeur Freelance",
       title: "Développeur fullstack",
       titleAccent: "React & Symfony",
-      subtitle: "Solutions web sur mesure pour transformer vos idées en applications performantes et élégantes",
+      subtitle:
+        "Solutions web sur mesure pour transformer vos idées en applications performantes et élégantes",
       cta: "Voir mes projets",
       code: {
         name: "Eliaman",
-        skills: ["React/NextJS", "Symfony", "NodeJS", "Wordpress", "Stripe"],
+        skills: ["React/NextJS", "Symfony", "NodeJS", "Stripe"],
         passion: "Code",
       },
     },
@@ -25,9 +26,12 @@ export const translations = {
     // About
     about: {
       title: "À propos",
-      paragraph1: "Développeur fullstack passionné, je crée des solutions web modernes et performantes qui allient esthétique et fonctionnalité.",
-      paragraph2: "Spécialisé en React et Symfony, j'accompagne mes clients de la conception à la mise en production, en garantissant qualité, performance et expérience utilisateur optimale.",
-      paragraph3: "Mon approche : écoute, conseil technique et code propre pour des projets qui durent.",
+      paragraph1:
+        "Développeur fullstack passionné, je crée des solutions web modernes et performantes qui allient esthétique et fonctionnalité.",
+      paragraph2:
+        "Spécialisé en React et Symfony, j'accompagne mes clients de la conception à la mise en production, en garantissant qualité, performance et expérience utilisateur optimale.",
+      paragraph3:
+        "Mon approche : écoute, conseil technique et code propre pour des projets qui durent.",
       skillsTitle: "Compétences",
       skills: {
         react: "React",
@@ -42,23 +46,28 @@ export const translations = {
     // Portfolio
     portfolio: {
       title: "Réalisations",
-      subtitle: "Une sélection de projets qui illustrent mon expertise et ma passion pour le développement web",
+      subtitle:
+        "Une sélection de projets qui illustrent mon expertise et ma passion pour le développement web",
       projects: [
         {
           title: "ERP - Gestion de parc",
-          description: "ERP complet pour la gestion de parc automobile. Gestion des paiements Stripe, bases de données clients, statistiques et facturation. Solution déployée et utilisée par une quarantaine d'agences.",
+          description:
+            "ERP complet pour la gestion de parc automobile. Gestion des paiements Stripe, bases de données clients, statistiques et facturation. Solution déployée et utilisée par une quarantaine d'agences.",
         },
         {
           title: "Blacksheep-Van",
-          description: "Plateforme de location et vente de vans aménagés en Europe. Site développé avec NextJS 13, API NodeJS et CMS Symfony. Interface moderne pour une expérience utilisateur optimale et des réservations simplifiées.",
+          description:
+            "Plateforme de location et vente de vans aménagés en Europe. Site développé avec NextJS 13, API NodeJS et CMS Symfony. Interface moderne pour une expérience utilisateur optimale et des réservations simplifiées.",
         },
         {
           title: "Blacksheep - Van, Roadtrip",
-          description: "Application mobile compagnon de roadtrip. Carte interactive avec roadbooks en France et Europe, spots de parking, activités et restaurants. Développée en React Native pour iOS et Android.",
+          description:
+            "Application mobile compagnon de roadtrip. Carte interactive avec roadbooks en France et Europe, spots de parking, activités et restaurants. Développée en React Native pour iOS et Android.",
         },
         {
           title: "Paintball Nature Game",
-          description: "Site vitrine et système de réservation pour association de paintball en Isère. Intégration du calendrier de réservation, paiements sécurisés Stripe et présentation des activités outdoor.",
+          description:
+            "Site vitrine et système de réservation pour association de paintball en Isère. Intégration du calendrier de réservation, paiements sécurisés Stripe et présentation des activités outdoor.",
         },
       ],
     },
@@ -70,17 +79,28 @@ export const translations = {
       items: [
         {
           title: "Développement Web Sur Mesure",
-          description: "Création d'applications web modernes et performantes, adaptées à vos besoins spécifiques. De la landing page au SaaS complexe.",
-          features: ["React & Symfony", "Design responsive", "Code maintenable"],
+          description:
+            "Création d'applications web modernes et performantes, adaptées à vos besoins spécifiques. De la landing page au SaaS complexe.",
+          features: [
+            "React & Symfony",
+            "Design responsive",
+            "Code maintenable",
+          ],
         },
         {
           title: "Optimisation Performance & UX",
-          description: "Amélioration des performances de votre site web et optimisation de l'expérience utilisateur pour maximiser vos conversions.",
-          features: ["Audit technique", "SEO & accessibilité", "Tests utilisateurs"],
+          description:
+            "Amélioration des performances de votre site web et optimisation de l'expérience utilisateur pour maximiser vos conversions.",
+          features: [
+            "Audit technique",
+            "SEO & accessibilité",
+            "Tests utilisateurs",
+          ],
         },
         {
           title: "Maintenance & Conseils Techniques",
-          description: "Accompagnement continu pour garantir la pérennité de votre projet. Support technique, évolutions et conseils stratégiques.",
+          description:
+            "Accompagnement continu pour garantir la pérennité de votre projet. Support technique, évolutions et conseils stratégiques.",
           features: ["Support réactif", "Mises à jour", "Veille technologique"],
         },
       ],
@@ -120,7 +140,8 @@ export const translations = {
 
     // Footer
     footer: {
-      description: "Développeur fullstack passionné, créateur de solutions web modernes et performantes.",
+      description:
+        "Développeur fullstack passionné, créateur de solutions web modernes et performantes.",
       navigation: "Navigation",
       followMe: "Suivez-moi",
       madeWith: "Fait avec",
@@ -142,11 +163,12 @@ export const translations = {
       badge: "Freelance Developer",
       title: "Fullstack developer",
       titleAccent: "React & Symfony",
-      subtitle: "Custom web solutions to transform your ideas into high-performance and elegant applications",
+      subtitle:
+        "Custom web solutions to transform your ideas into high-performance and elegant applications",
       cta: "View my projects",
       code: {
         name: "Eliaman",
-        skills: ["React/NextJS", "Symfony", "NodeJS", "Wordpress", "Stripe"],
+        skills: ["React/NextJS", "Symfony", "NodeJS", "Stripe"],
         passion: "Code",
       },
     },
@@ -154,9 +176,12 @@ export const translations = {
     // About
     about: {
       title: "About",
-      paragraph1: "Passionate fullstack developer, I create modern and high-performance web solutions that combine aesthetics and functionality.",
-      paragraph2: "Specialized in React and Symfony, I support my clients from design to production, ensuring quality, performance and optimal user experience.",
-      paragraph3: "My approach: listening, technical advice and clean code for projects that last.",
+      paragraph1:
+        "Passionate fullstack developer, I create modern and high-performance web solutions that combine aesthetics and functionality.",
+      paragraph2:
+        "Specialized in React and Symfony, I support my clients from design to production, ensuring quality, performance and optimal user experience.",
+      paragraph3:
+        "My approach: listening, technical advice and clean code for projects that last.",
       skillsTitle: "Skills",
       skills: {
         react: "React",
@@ -171,23 +196,28 @@ export const translations = {
     // Portfolio
     portfolio: {
       title: "Projects",
-      subtitle: "A selection of projects that illustrate my expertise and passion for web development",
+      subtitle:
+        "A selection of projects that illustrate my expertise and passion for web development",
       projects: [
         {
           title: "ERP - Fleet Management",
-          description: "Complete ERP for automotive fleet management. Stripe payment management, customer databases, statistics and invoicing. Solution deployed and used by around forty agencies.",
+          description:
+            "Complete ERP for automotive fleet management. Stripe payment management, customer databases, statistics and invoicing. Solution deployed and used by around forty agencies.",
         },
         {
           title: "Blacksheep-Van",
-          description: "Platform for renting and selling fitted vans in Europe. Site developed with NextJS 13, NodeJS API and Symfony CMS. Modern interface for optimal user experience and simplified bookings.",
+          description:
+            "Platform for renting and selling fitted vans in Europe. Site developed with NextJS 13, NodeJS API and Symfony CMS. Modern interface for optimal user experience and simplified bookings.",
         },
         {
           title: "Blacksheep - Van, Roadtrip",
-          description: "Mobile companion app for road trips. Interactive map with roadbooks in France and Europe, parking spots, activities and restaurants. Developed in React Native for iOS and Android.",
+          description:
+            "Mobile companion app for road trips. Interactive map with roadbooks in France and Europe, parking spots, activities and restaurants. Developed in React Native for iOS and Android.",
         },
         {
           title: "Paintball Nature Game",
-          description: "Showcase site and booking system for paintball association in Isère. Integration of booking calendar, secure Stripe payments and presentation of outdoor activities.",
+          description:
+            "Showcase site and booking system for paintball association in Isère. Integration of booking calendar, secure Stripe payments and presentation of outdoor activities.",
         },
       ],
     },
@@ -199,17 +229,24 @@ export const translations = {
       items: [
         {
           title: "Custom Web Development",
-          description: "Creation of modern and high-performance web applications, adapted to your specific needs. From landing page to complex SaaS.",
-          features: ["React & Symfony", "Responsive design", "Maintainable code"],
+          description:
+            "Creation of modern and high-performance web applications, adapted to your specific needs. From landing page to complex SaaS.",
+          features: [
+            "React & Symfony",
+            "Responsive design",
+            "Maintainable code",
+          ],
         },
         {
           title: "Performance & UX Optimization",
-          description: "Improving your website's performance and optimizing user experience to maximize your conversions.",
+          description:
+            "Improving your website's performance and optimizing user experience to maximize your conversions.",
           features: ["Technical audit", "SEO & accessibility", "User testing"],
         },
         {
           title: "Maintenance & Technical Advice",
-          description: "Ongoing support to ensure the sustainability of your project. Technical support, developments and strategic advice.",
+          description:
+            "Ongoing support to ensure the sustainability of your project. Technical support, developments and strategic advice.",
           features: ["Responsive support", "Updates", "Technology watch"],
         },
       ],
@@ -249,7 +286,8 @@ export const translations = {
 
     // Footer
     footer: {
-      description: "Passionate fullstack developer, creator of modern and high-performance web solutions.",
+      description:
+        "Passionate fullstack developer, creator of modern and high-performance web solutions.",
       navigation: "Navigation",
       followMe: "Follow me",
       madeWith: "Made with",
