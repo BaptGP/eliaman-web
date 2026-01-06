@@ -17,6 +17,7 @@ export default async function handler(req, res) {
     const data = await resend.emails.send({
       from: "noreply@eliaman.com",
       to: "contact@eliaman.com",
+      reply_to: email,
       subject: `Nouveau message de ${name}`,
       html: `
         <!DOCTYPE html>
@@ -128,6 +129,11 @@ export default async function handler(req, res) {
               </div>
               <div class="footer">
                 <p>Message reçu depuis le formulaire de contact Eliaman</p>
+                <p style="margin-top: 15px;">
+                  <a href="mailto:${email}?subject=Re: Nouveau message de contact" style="color: #1CB5E0; text-decoration: none; font-weight: 600;">
+                    Répondre à ${name}
+                  </a>
+                </p>
               </div>
             </div>
           </body>
