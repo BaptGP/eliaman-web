@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
-import { useAvailability } from "../hooks/useAvailability";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useAvailability } from "../hooks/useAvailability";
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -21,15 +21,37 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulation d'envoi
     setStatus("sending");
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+
+    const apiUrl =
+      import.meta.env.MODE === "development"
+        ? "http://localhost:3001/api/send-email"
+        : "/api/send-email";
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus(""), 3000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus(""), 3000);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("error");
       setTimeout(() => setStatus(""), 3000);
-    }, 1000);
+    }
   };
 
   return (
@@ -151,10 +173,10 @@ const Contact = () => {
                       {t.contact.info.email}
                     </h4>
                     <a
-                      href="mailto:contact@eliaman.dev"
+                      href="mailto:contact@eliaman.com"
                       className="text-secondary hover:text-accent transition-colors"
                     >
-                      contact@eliaman.dev
+                      contact@eliaman.com
                     </a>
                   </div>
                 </div>
@@ -184,7 +206,10 @@ const Contact = () => {
                     <h4 className="font-poppins font-semibold text-dark mb-1">
                       {t.contact.info.location}
                     </h4>
-                    <p className="text-secondary" style={{ whiteSpace: 'pre-line' }}>
+                    <p
+                      className="text-secondary"
+                      style={{ whiteSpace: "pre-line" }}
+                    >
                       {t.contact.info.locationText}
                     </p>
                   </div>
@@ -218,8 +243,8 @@ const Contact = () => {
               {availability.maxProjects && (
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm font-roboto opacity-90">
-                    {t.contact.availability.projectsInProgress} : {availability.currentProjects} /{" "}
-                    {availability.maxProjects}
+                    {t.contact.availability.projectsInProgress} :{" "}
+                    {availability.currentProjects} / {availability.maxProjects}
                   </p>
                 </div>
               )}

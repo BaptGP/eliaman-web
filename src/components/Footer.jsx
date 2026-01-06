@@ -88,7 +88,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:contact@eliaman.dev"
+                href="mailto:contact@eliaman.com"
                 className="w-12 h-12 bg-gray-800 hover:bg-accent rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Email"
               >
