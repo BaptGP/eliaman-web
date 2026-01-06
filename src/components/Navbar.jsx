@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,15 +17,31 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [mobileMenuOpen]);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setMobileMenuOpen(false);
     }
   };
 
   return (
     <nav
+      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-white shadow-lg py-4" : "bg-transparent py-6"
       }`}
@@ -82,7 +100,10 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile menu button */}
-        <button className="md:hidden text-dark">
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden text-dark"
+        >
           <svg
             className="w-6 h-6"
             fill="none"
@@ -98,6 +119,45 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div
+          className={`md:hidden ${
+            scrolled ? "bg-white" : "bg-white/95"
+          } shadow-lg`}
+        >
+          <div className="container mx-auto px-6 py-4 space-y-3">
+            <button
+              onClick={() => scrollToSection("about")}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.about}
+            </button>
+            <button
+              onClick={() => scrollToSection("portfolio")}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.projects}
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.services}
+            </button>
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full bg-accent hover:bg-accentHover text-white px-6 py-2 rounded-lg font-poppins font-semibold uppercase text-sm transition-all duration-300 hover:shadow-lg"
+            >
+              {t.nav.contact}
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

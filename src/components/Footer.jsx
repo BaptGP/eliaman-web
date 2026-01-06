@@ -70,7 +70,7 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/BaptGP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-gray-800 hover:bg-accent rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"

@@ -69,6 +69,11 @@ export const translations = {
           description:
             "Site vitrine et système de réservation pour association de paintball en Isère. Intégration du calendrier de réservation, paiements sécurisés Stripe et présentation des activités outdoor.",
         },
+        {
+          title: "Karine Avani - Artiste & Auteure",
+          description:
+            "Site vitrine pour artiste, auteure et poétesse. Portfolio élégant mettant en avant les créations et publications. Développé avec NextJS, Sanity CMS et Tailwind pour une expérience utilisateur fluide et moderne.",
+        },
       ],
     },
 
@@ -218,6 +223,11 @@ export const translations = {
           title: "Paintball Nature Game",
           description:
             "Showcase site and booking system for paintball association in Isère. Integration of booking calendar, secure Stripe payments and presentation of outdoor activities.",
+        },
+        {
+          title: "Karine Avani - Artist & Author",
+          description:
+            "Showcase website for artist, author and poet. Elegant portfolio highlighting creations and publications. Developed with NextJS, Sanity CMS and Tailwind for a smooth and modern user experience.",
         },
       ],
     },
