@@ -33,11 +33,11 @@ const Navbar = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center space-x-2 group cursor-pointer"
         >
-          <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg">
-            <span className="text-white font-poppins font-bold text-xl group-hover:scale-110 transition-transform">
-              {"</>"}
-            </span>
-          </div>
+          <img
+            src="/img/logo_withoutname_color.png"
+            alt="Eliaman Logo"
+            className="h-14 transition-all duration-300 group-hover:scale-125 group-hover:rotate-6"
+          />
           <span className="text-2xl font-poppins font-bold text-dark group-hover:text-accent transition-colors">
             Eliaman
           </span>

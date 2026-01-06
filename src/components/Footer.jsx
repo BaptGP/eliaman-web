@@ -1,4 +1,4 @@
-import { Github, Heart, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
@@ -12,11 +12,11 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-poppins font-bold text-xl">
-                  {"</>"}
-                </span>
-              </div>
+              <img
+                src="/img/logo_withoutname_black.png"
+                alt="Eliaman Logo"
+                className="h-10 invert"
+              />
               <span className="text-2xl font-poppins font-bold">Eliaman</span>
             </div>
             <p className="text-gray-400 font-roboto">{t.footer.description}</p>
@@ -100,12 +100,11 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-400 font-roboto flex items-center justify-center space-x-2">
+          <p className="text-gray-400 font-roboto flex items-center justify-center space-x-1">
             <span>
               © {currentYear} Eliaman. {t.footer.madeWith}
             </span>
-            <Heart className="w-4 h-4 text-accent fill-accent" />
-            <span>{t.footer.and} React</span>
+            <span>React</span>
           </p>
         </div>
       </div>
