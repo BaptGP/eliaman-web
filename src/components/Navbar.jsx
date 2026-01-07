@@ -125,7 +125,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => navigateToSection("contact")}
               className="bg-accent hover:bg-accentHover text-white px-6 py-2 rounded-lg font-poppins font-semibold uppercase text-sm transition-all duration-300 hover:shadow-lg"
             >
               {t.nav.contact}
@@ -191,7 +191,7 @@ const Navbar = () => {
               <LanguageSwitcher />
             </div>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => navigateToSection("contact")}
               className="block w-full bg-accent hover:bg-accentHover text-white px-6 py-2 rounded-lg font-poppins font-semibold uppercase text-sm transition-all duration-300 hover:shadow-lg"
             >
               {t.nav.contact}
