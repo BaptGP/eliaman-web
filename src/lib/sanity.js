@@ -79,7 +79,16 @@ export const fetchArticleBySlug = async (slug) => {
     },
     author,
     publishedAt,
-    category
+    category,
+    seo {
+      metaTitle,
+      metaDescription,
+      ogImage {
+        asset -> {
+          url
+        }
+      }
+    }
   }`;
 
   try {

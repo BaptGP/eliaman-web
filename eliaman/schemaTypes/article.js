@@ -67,6 +67,35 @@ export default {
       type: 'datetime',
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'seo',
+      title: 'SEO & Réseaux Sociaux',
+      type: 'object',
+      fields: [
+        {
+          name: 'metaTitle',
+          title: 'Titre Meta (pour les moteurs de recherche)',
+          type: 'string',
+          description: "Laisse vide pour utiliser le titre de l'article",
+        },
+        {
+          name: 'metaDescription',
+          title: 'Description Meta',
+          type: 'text',
+          rows: 2,
+          description: "Laisse vide pour utiliser l'extrait",
+        },
+        {
+          name: 'ogImage',
+          title: 'Image pour les réseaux sociaux (Open Graph)',
+          type: 'image',
+          description: "Laisse vide pour utiliser l'image à la une",
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
+    },
   ],
   preview: {
     select: {

@@ -12,6 +12,59 @@ const BlogPost = () => {
   const [relatedArticles, setRelatedArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const updateMetaTags = (article) => {
+    // Use SEO data from Sanity if available, otherwise use defaults
+    const metaTitle = article.seo?.metaTitle || article.title;
+    const metaDescription = article.seo?.metaDescription || article.excerpt;
+    const ogImageUrl =
+      getImageUrl(article.seo?.ogImage) || getImageUrl(article.image);
+    const articleUrl = `${window.location.origin}/blog/${article.slug.current}`;
+
+    // Update title
+    document.title = `${metaTitle} | Eliaman`;
+
+    // Update or create meta tags
+    const updateOrCreateMeta = (property, content) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("property", property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    };
+
+    const updateOrCreateMetaName = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    };
+
+    // Open Graph meta tags
+    updateOrCreateMeta("og:title", metaTitle);
+    updateOrCreateMeta("og:description", metaDescription);
+    if (ogImageUrl) {
+      updateOrCreateMeta("og:image", ogImageUrl);
+    }
+    updateOrCreateMeta("og:url", articleUrl);
+    updateOrCreateMeta("og:type", "article");
+
+    // Twitter Card meta tags
+    updateOrCreateMetaName("twitter:card", "summary_large_image");
+    updateOrCreateMetaName("twitter:title", metaTitle);
+    updateOrCreateMetaName("twitter:description", metaDescription);
+    if (ogImageUrl) {
+      updateOrCreateMetaName("twitter:image", ogImageUrl);
+    }
+
+    // Standard meta tags
+    updateOrCreateMetaName("description", metaDescription);
+  };
+
   useEffect(() => {
     const loadArticle = async () => {
       try {
@@ -24,6 +77,9 @@ const BlogPost = () => {
             .filter((a) => a.category === data.category && a._id !== data._id)
             .slice(0, 3);
           setRelatedArticles(related);
+
+          // Update meta tags for social sharing
+          updateMetaTags(data);
         }
       } catch (error) {
         console.error("Error fetching article:", error);
