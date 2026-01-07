@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = () => {
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
@@ -39,6 +42,29 @@ const Navbar = () => {
     }
   };
 
+  const navigateToSection = (id) => {
+    if (location.pathname === "/") {
+      scrollToSection(id);
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <nav
       ref={navRef}
@@ -48,7 +74,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={handleLogoClick}
           className="flex items-center space-x-2 group cursor-pointer"
         >
           <img
@@ -64,7 +90,7 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center space-x-8">
           <li>
             <button
-              onClick={() => scrollToSection("about")}
+              onClick={() => navigateToSection("about")}
               className="text-secondary hover:text-accent transition-colors font-roboto"
             >
               {t.nav.about}
@@ -72,7 +98,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("portfolio")}
+              onClick={() => navigateToSection("portfolio")}
               className="text-secondary hover:text-accent transition-colors font-roboto"
             >
               {t.nav.projects}
@@ -80,11 +106,19 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => navigateToSection("services")}
               className="text-secondary hover:text-accent transition-colors font-roboto"
             >
               {t.nav.services}
             </button>
+          </li>
+          <li>
+            <Link
+              to="/blog"
+              className="text-secondary hover:text-accent transition-colors font-roboto"
+            >
+              {t.nav.blog}
+            </Link>
           </li>
           <li>
             <LanguageSwitcher />
@@ -129,23 +163,30 @@ const Navbar = () => {
         >
           <div className="container mx-auto px-6 py-4 space-y-3">
             <button
-              onClick={() => scrollToSection("about")}
+              onClick={() => navigateToSection("about")}
               className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
             >
               {t.nav.about}
             </button>
             <button
-              onClick={() => scrollToSection("portfolio")}
+              onClick={() => navigateToSection("portfolio")}
               className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
             >
               {t.nav.projects}
             </button>
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => navigateToSection("services")}
               className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
             >
               {t.nav.services}
             </button>
+            <Link
+              to="/blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.blog}
+            </Link>
             <div className="py-2">
               <LanguageSwitcher />
             </div>

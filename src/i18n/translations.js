@@ -5,6 +5,7 @@ export const translations = {
       about: "À propos",
       projects: "Projets",
       services: "Services",
+      blog: "Blog",
       contact: "Contact",
     },
 
@@ -143,6 +144,25 @@ export const translations = {
       },
     },
 
+    // Blog
+    blog: {
+      title: "Blog",
+      subtitle: "Partages d'expériences et conseils sur le développement web",
+      readMore: "Lire l'article",
+      publishedOn: "Publié le",
+      by: "par",
+      backToBlog: "Retour au blog",
+      relatedArticles: "Articles connexes",
+      noArticles: "Aucun article pour le moment",
+      categories: {
+        react: "React",
+        symfony: "Symfony",
+        webdev: "Développement Web",
+        performance: "Performance",
+        tips: "Conseils",
+      },
+    },
+
     // Footer
     footer: {
       description:
@@ -160,6 +180,7 @@ export const translations = {
       about: "About",
       projects: "Projects",
       services: "Services",
+      blog: "Blog",
       contact: "Contact",
     },
 
@@ -291,6 +312,25 @@ export const translations = {
         limited: "Limited availability",
         unavailable: "Fully booked",
         projectsInProgress: "Projects in progress",
+      },
+    },
+
+    // Blog
+    blog: {
+      title: "Blog",
+      subtitle: "Sharing experiences and advice on web development",
+      readMore: "Read article",
+      publishedOn: "Published on",
+      by: "by",
+      backToBlog: "Back to blog",
+      relatedArticles: "Related articles",
+      noArticles: "No articles yet",
+      categories: {
+        react: "React",
+        symfony: "Symfony",
+        webdev: "Web Development",
+        performance: "Performance",
+        tips: "Tips",
       },
     },
 

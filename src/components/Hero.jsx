@@ -18,9 +18,7 @@ const Hero = () => {
           <div className="space-y-6 animate-fade-in-up">
             <div className="flex items-center space-x-2 text-accent">
               <Sparkles className="w-6 h-6" />
-              <span className="font-poppins font-semibold">
-                {t.hero.badge}
-              </span>
+              <span className="font-poppins font-semibold">{t.hero.badge}</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-poppins font-bold text-dark leading-tight">
@@ -58,17 +56,24 @@ const Hero = () => {
                       {"{"}
                     </div>
                     <div className="text-green-400 pl-4">
-                      name: <span className="text-yellow-300">'{t.hero.code.name}'</span>,
+                      name:{" "}
+                      <span className="text-yellow-300">
+                        '{t.hero.code.name}'
+                      </span>
+                      ,
                     </div>
                     <div className="text-green-400 pl-4">
                       skills:{" "}
-                      <span className="text-blue-400">
+                      <span className="text-blue-400 break-words">
                         {JSON.stringify(t.hero.code.skills)}
                       </span>
                       ,
                     </div>
                     <div className="text-green-400 pl-4">
-                      passion: <span className="text-yellow-300">'{t.hero.code.passion}'</span>
+                      passion:{" "}
+                      <span className="text-yellow-300">
+                        '{t.hero.code.passion}'
+                      </span>
                     </div>
                     <div className="text-purple-400">{"}"}</div>
                   </div>
