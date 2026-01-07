@@ -14,10 +14,17 @@ const BlogPost = () => {
 
   const updateMetaTags = (article) => {
     // Use SEO data from Sanity if available, otherwise use defaults
-    const metaTitle = article.seo?.metaTitle || article.title;
-    const metaDescription = article.seo?.metaDescription || article.excerpt;
+    const metaTitle =
+      article.seo?.metaTitle && article.seo.metaTitle.trim()
+        ? article.seo.metaTitle
+        : article.title;
+    const metaDescription =
+      article.seo?.metaDescription && article.seo.metaDescription.trim()
+        ? article.seo.metaDescription
+        : article.excerpt;
     const ogImageUrl =
-      getImageUrl(article.seo?.ogImage) || getImageUrl(article.image);
+      (article.seo?.ogImage ? getImageUrl(article.seo.ogImage) : null) ||
+      getImageUrl(article.image);
     const articleUrl = `${window.location.origin}/blog/${article.slug.current}`;
 
     // Update title
