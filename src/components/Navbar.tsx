@@ -127,6 +127,7 @@ export default function Navbar() {
           </li>
         </ul>
 
+        {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden text-dark"
@@ -145,52 +146,53 @@ export default function Navbar() {
             />
           </svg>
         </button>
-
-        {mobileMenuOpen && (
-          <div
-            className={`md:hidden ${
-              scrolled ? "bg-white" : "bg-white/95"
-            } shadow-lg`}
-          >
-            <div className="container mx-auto px-6 py-4 space-y-3">
-              <button
-                onClick={() => navigateToSection("about")}
-                className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
-              >
-                {t.nav.about}
-              </button>
-              <button
-                onClick={() => navigateToSection("portfolio")}
-                className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
-              >
-                {t.nav.projects}
-              </button>
-              <button
-                onClick={() => navigateToSection("services")}
-                className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
-              >
-                {t.nav.services}
-              </button>
-              <Link
-                href="/blog"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
-              >
-                {t.nav.blog}
-              </Link>
-              <div className="py-2">
-                <LanguageSwitcher />
-              </div>
-              <button
-                onClick={() => navigateToSection("contact")}
-                className="block w-full bg-accent hover:bg-accentHover text-white px-6 py-2 rounded-lg font-poppins font-semibold uppercase text-sm transition-all duration-300 hover:shadow-lg"
-              >
-                {t.nav.contact}
-              </button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div
+          className={`md:hidden ${
+            scrolled ? "bg-white" : "bg-white/95"
+          } shadow-lg`}
+        >
+          <div className="container mx-auto px-6 py-4 space-y-3">
+            <button
+              onClick={() => navigateToSection("about")}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.about}
+            </button>
+            <button
+              onClick={() => navigateToSection("portfolio")}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.projects}
+            </button>
+            <button
+              onClick={() => navigateToSection("services")}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.services}
+            </button>
+            <Link
+              href="/blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block w-full text-left text-secondary hover:text-accent transition-colors font-roboto py-2"
+            >
+              {t.nav.blog}
+            </Link>
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
+            <button
+              onClick={() => navigateToSection("contact")}
+              className="block w-full bg-accent hover:bg-accentHover text-white px-6 py-2 rounded-lg font-poppins font-semibold uppercase text-sm transition-all duration-300 hover:shadow-lg"
+            >
+              {t.nav.contact}
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
