@@ -20,13 +20,10 @@ build
 
 # Turbopack cache
 .turbopack
-.next/dev/cache
-.next/dev/prerender-manifest.json
-.next/dev/server
-.next/dev/static
-.next/dev/trace
+.next/dev
 .next/server
 .next/static
+.next/cache
 
 # Editor directories and files
 .vscode/*
