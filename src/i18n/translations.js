@@ -137,10 +137,11 @@ export const translations = {
       },
       availability: {
         title: "Disponibilité",
-        available: "Disponible",
-        limited: "Disponibilité limitée",
-        unavailable: "Complet",
+        status: "Disponible",
+        message:
+          "Actuellement disponible pour de nouveaux projets. Réponse sous 24h.",
         projectsInProgress: "Projets en cours",
+        projectsCount: "2 / 5",
       },
     },
 
@@ -308,10 +309,10 @@ export const translations = {
       },
       availability: {
         title: "Availability",
-        available: "Available",
-        limited: "Limited availability",
-        unavailable: "Fully booked",
+        status: "Available",
+        message: "Currently available for new projects. Response within 24h.",
         projectsInProgress: "Projects in progress",
+        projectsCount: "2 / 5",
       },
     },
 

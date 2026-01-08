@@ -8,9 +8,9 @@ export const getImageUrl = (image) => {
   return null;
 };
 
-const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || "";
-const dataset = import.meta.env.VITE_SANITY_DATASET || "production";
-const token = import.meta.env.VITE_SANITY_API_READ_TOKEN || "";
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "";
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+const token = process.env.NEXT_PUBLIC_SANITY_API_READ_TOKEN || "";
 const apiVersion = "2024-01-01";
 
 let sanityClient = null;
@@ -28,7 +28,7 @@ if (projectId) {
 export const fetchArticles = async () => {
   if (!sanityClient) {
     console.warn(
-      "Sanity client not configured. Please set VITE_SANITY_PROJECT_ID in .env"
+      "Sanity client not configured. Please set NEXT_PUBLIC_SANITY_PROJECT_ID in .env.local"
     );
     return [];
   }
@@ -61,7 +61,7 @@ export const fetchArticles = async () => {
 export const fetchArticleBySlug = async (slug) => {
   if (!sanityClient) {
     console.warn(
-      "Sanity client not configured. Please set VITE_SANITY_PROJECT_ID in .env"
+      "Sanity client not configured. Please set NEXT_PUBLIC_SANITY_PROJECT_ID in .env.local"
     );
     return null;
   }
@@ -103,7 +103,7 @@ export const fetchArticleBySlug = async (slug) => {
 export const fetchArticlesByCategory = async (category) => {
   if (!sanityClient) {
     console.warn(
-      "Sanity client not configured. Please set VITE_SANITY_PROJECT_ID in .env"
+      "Sanity client not configured. Please set NEXT_PUBLIC_SANITY_PROJECT_ID in .env.local"
     );
     return [];
   }
