@@ -1,3 +1,4 @@
+import { HelmetProvider } from "react-helmet-async";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import About from "./components/About";
 import Blog from "./components/Blog";
@@ -12,30 +13,32 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 
 function App() {
   return (
-    <Router>
-      <LanguageProvider>
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <About />
-                  <Portfolio />
-                  <Services />
-                  <Contact />
-                </>
-              }
-            />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-          </Routes>
-          <Footer />
-        </div>
-      </LanguageProvider>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <LanguageProvider>
+          <div className="App">
+            <Navbar />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <About />
+                    <Portfolio />
+                    <Services />
+                    <Contact />
+                  </>
+                }
+              />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+            </Routes>
+            <Footer />
+          </div>
+        </LanguageProvider>
+      </Router>
+    </HelmetProvider>
   );
 }
 
