@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Eliaman - Développeur Fullstack React & Symfony",
   description:
     "Développeur Fullstack React & Symfony - Création de sites web et solutions sur-mesure",
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Eliaman - Développeur Fullstack React & Symfony",
     description:
