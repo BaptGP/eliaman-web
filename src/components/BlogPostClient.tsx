@@ -156,18 +156,18 @@ export default function BlogPostClient({ article }: Props) {
                         {...props}
                       />
                     ),
-                    code: ({ node, inline, ...props }) =>
-                      inline ? (
-                        <code
-                          className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-accent"
-                          {...props}
-                        />
-                      ) : (
-                        <code
-                          className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm mb-4"
-                          {...props}
-                        />
-                      ),
+                    code: ({ node, ...props }: any) => (
+                      <code
+                        className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-accent"
+                        {...props}
+                      />
+                    ),
+                    pre: ({ node, ...props }: any) => (
+                      <pre
+                        className="block bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm mb-4"
+                        {...props}
+                      />
+                    ),
                     a: ({ node, ...props }) => (
                       <a className="text-accent hover:underline" {...props} />
                     ),
