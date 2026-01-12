@@ -56,12 +56,12 @@ export const translations = {
             "ERP complet pour la gestion de parc automobile. Gestion des paiements Stripe, bases de données clients, statistiques et facturation. Solution déployée et utilisée par une quarantaine d'agences.",
         },
         {
-          title: "Blacksheep-Van",
+          title: "Plateforme de Location de Véhicules",
           description:
-            "Plateforme de location et vente de vans aménagés en Europe. Site développé avec NextJS 13, API NodeJS et CMS Symfony. Interface moderne pour une expérience utilisateur optimale et des réservations simplifiées.",
+            "Plateforme de location et vente de véhicules aménagés en Europe. Site développé avec NextJS 13, API NodeJS et CMS Symfony. Interface moderne pour une expérience utilisateur optimale et des réservations simplifiées.",
         },
         {
-          title: "Blacksheep - Van, Roadtrip",
+          title: "Application Compagnon de Voyage",
           description:
             "Application mobile compagnon de roadtrip. Carte interactive avec roadbooks en France et Europe, spots de parking, activités et restaurants. Développée en React Native pour iOS et Android.",
         },
@@ -232,12 +232,12 @@ export const translations = {
             "Complete ERP for automotive fleet management. Stripe payment management, customer databases, statistics and invoicing. Solution deployed and used by around forty agencies.",
         },
         {
-          title: "Blacksheep-Van",
+          title: "Vehicle Rental Platform",
           description:
-            "Platform for renting and selling fitted vans in Europe. Site developed with NextJS 13, NodeJS API and Symfony CMS. Modern interface for optimal user experience and simplified bookings.",
+            "Platform for renting and selling fitted vehicles in Europe. Site developed with NextJS 13, NodeJS API and Symfony CMS. Modern interface for optimal user experience and simplified bookings.",
         },
         {
-          title: "Blacksheep - Van, Roadtrip",
+          title: "Travel Companion App",
           description:
             "Mobile companion app for road trips. Interactive map with roadbooks in France and Europe, parking spots, activities and restaurants. Developed in React Native for iOS and Android.",
         },

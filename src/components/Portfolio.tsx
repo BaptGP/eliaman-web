@@ -36,7 +36,7 @@ export default function Portfolio() {
       image:
         "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&h=600&fit=crop",
       date: "2023",
-      link: "https://www.blacksheep-van.com",
+      link: null,
       webDisabled: false,
     },
     {
@@ -47,7 +47,7 @@ export default function Portfolio() {
       image:
         "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&h=600&fit=crop",
       date: "2021",
-      link: "https://www.blacksheep-van.com",
+      link: null,
       webDisabled: false,
     },
     {
